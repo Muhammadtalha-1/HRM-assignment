@@ -3,173 +3,600 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Talha's HRM Assignment</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>HRM Assignment - Muhammad Talha</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Paper Heart Design Color Scheme */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: #FFF5EE; /* Soft Peach */
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #333;
             line-height: 1.6;
+            min-height: 100vh;
         }
 
-        .navbar {
-            background-color: #B03060; /* Deep Red */
-            padding: 1rem 2rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 20px;
         }
 
-        .nav-links a {
-            color: #FFFFFF;
-            text-decoration: none;
-            padding: 1rem 2rem;
-            transition: background-color 0.3s ease;
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, #1a2980, #26d0ce);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .nav-links a:hover {
-            background-color: #8B2252; /* Darker Red */
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
         }
 
-        .header {
-            background: linear-gradient(rgba(176, 48, 96, 0.9), rgba(255, 218, 185, 0.9)),
-                        url('https://source.unsplash.com/random/1920x1080') center/cover;
-            height: 100vh;
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            margin-top: 60px;
         }
 
-        .header-content h1 {
+        .logo i {
+            margin-right: 10px;
+            color: #ffcc00;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 41, 128, 0.85), rgba(38, 208, 206, 0.85)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero h1 {
             font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
-        .about-section {
+        .hero p {
+            font-size: 1.3rem;
             max-width: 800px;
-            margin: 4rem auto;
-            padding: 2rem;
+            margin: 0 auto 30px;
+        }
+
+        /* Assignment Info */
+        .assignment-info {
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid #1a2980;
         }
 
-        .about-section h2 {
-            color: #B03060;
-            border-bottom: 2px solid #FFDAB9;
-            padding-bottom: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .assignment-details {
-            background: #FFFAF0;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-top: 2rem;
-        }
-
-        footer {
-            background: #B03060;
-            color: white;
-            padding: 2rem;
+        .assignment-info h2 {
+            color: #1a2980;
+            margin-bottom: 25px;
+            font-size: 2rem;
             text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border-top: 4px solid #26d0ce;
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-card i {
+            font-size: 2.5rem;
+            color: #1a2980;
+            margin-bottom: 15px;
+        }
+
+        .info-card h3 {
+            color: #26d0ce;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .info-card p {
+            color: #555;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* Blog Content */
+        .section-title {
+            text-align: center;
+            margin: 40px 0 30px;
+            color: #1a2980;
+            font-size: 2.2rem;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #1a2980, #26d0ce);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        .blog-content {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .posts {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .post {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: transform 0.4s ease;
+        }
+
+        .post:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .post-img {
+            height: 250px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .post-content {
+            padding: 30px;
+        }
+
+        .post-content .date {
+            color: #26d0ce;
+            font-size: 1rem;
+            margin-bottom: 12px;
+            display: block;
+            font-weight: 600;
+        }
+
+        .post-content h3 {
+            color: #1a2980;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .post-content p {
+            color: #555;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .read-more {
+            display: inline-block;
+            background: linear-gradient(to right, #1a2980, #26d0ce);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(26, 41, 128, 0.3);
+        }
+
+        .read-more:hover {
+            opacity: 0.9;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(26, 41, 128, 0.4);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .sidebar h3 {
+            color: #1a2980;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+            font-size: 1.5rem;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 18px;
+            padding-bottom: 18px;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+
+        .sidebar ul li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar ul li a {
+            color: #555;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+
+        .sidebar ul li a:hover {
+            color: #1a2980;
+            transform: translateX(8px);
+        }
+
+        .sidebar ul li a i {
+            margin-right: 12px;
+            color: #26d0ce;
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, #1a2980, #26d0ce);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .social-links {
+            margin-bottom: 25px;
         }
 
         .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
             color: white;
-            margin: 0 1rem;
-            font-size: 1.5rem;
-            transition: color 0.3s ease;
+            margin: 0 12px;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .blog-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                margin-top: 40px;
+            }
         }
 
         @media (max-width: 768px) {
-            .nav-links {
+            .header-content {
                 flex-direction: column;
+                text-align: center;
             }
-            .header-content h1 {
-                font-size: 2rem;
+            
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 8px 12px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .post-img {
+                height: 200px;
+                font-size: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
-
-    <header class="header" id="home">
-        <div class="header-content">
-            <h1>Human Resource Management</h1>
-            <p>Assignment Submission by Muhammad Talha</p>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-users"></i>
+                HRM Insights
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> Articles</a></li>
+                    <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <section class="about-section" id="about">
-        <h2>Student Information</h2>
-        <div class="assignment-details">
-            <p><strong>Name:</strong> Muhammad Talha</p>
-            <p><strong>Class Number:</strong> BSSE-231351</p>
-            <p><strong>Submitted To:</strong> Sir Inam UL HAQ</p>
-            <p><strong>Course:</strong> Human Resource Management</p>
-            <p><strong>Submission Date:</strong> 26,May,2025</p>
-        </div>
+    <!-- Hero Section -->
+    <div class="container">
+        <section class="hero">
+            <h1>Human Resource Management</h1>
+            <p>Exploring modern HR practices, talent management, and organizational development</p>
+        </section>
+    </div>
 
-        <h2 style="margin-top: 2rem;">About This Assignment</h2>
-        <p>This professional blog page has been developed as part of the HRM course requirements. The design incorporates modern web development practices and follows the color scheme guidelines provided in the assignment brief. The responsive layout ensures optimal viewing across various devices while maintaining professional aesthetics.</p>
-    </section>
+    <!-- Assignment Info -->
+    <div class="container">
+        <section class="assignment-info">
+            <h2><i class="fas fa-user-graduate"></i> Assignment Submission Details</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <i class="fas fa-user"></i>
+                    <h3>Student Name</h3>
+                    <p>Muhammad Talha</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-id-card"></i>
+                    <h3>Class Number</h3>
+                    <p>BSSE-231351</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>Submitted To</h3>
+                    <p>Inam Ul Haq</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-calendar-day"></i>
+                    <h3>Submission Date</h3>
+                    <p>26 May, 2025</p>
+                </div>
+            </div>
+        </section>
+    </div>
 
-    <footer id="contact">
-        <div class="social-links">
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
+    <!-- Blog Content -->
+    <div class="container">
+        <h2 class="section-title">HRM Articles & Research</h2>
+        
+        <div class="blog-content">
+            <div class="posts">
+                <!-- Post 1 -->
+                <article class="post">
+                    <div class="post-img" style="background: linear-gradient(45deg, #1a2980, #26d0ce);">
+                        <span>Strategic HR Management</span>
+                    </div>
+                    <div class="post-content">
+                        <span class="date"><i class="far fa-calendar"></i> May 24, 2025</span>
+                        <h3>The Evolution of Human Resource Management</h3>
+                        <p>Human Resource Management has transformed from a traditional personnel administration function to a strategic partner in organizational success. Modern HRM focuses on aligning human capital with business objectives, fostering employee engagement, and driving organizational change.</p>
+                        <p>This article explores the journey of HRM through different eras - from the industrial welfare movement to the current digital age, highlighting key developments and future trends.</p>
+                        <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Post 2 -->
+                <article class="post">
+                    <div class="post-img" style="background: linear-gradient(45deg, #614385, #516395);">
+                        <span>Talent Acquisition</span>
+                    </div>
+                    <div class="post-content">
+                        <span class="date"><i class="far fa-calendar"></i> May 20, 2025</span>
+                        <h3>Innovative Recruitment Strategies in the Digital Age</h3>
+                        <p>The recruitment landscape has undergone a seismic shift with the advent of digital technologies. Traditional methods are being replaced by AI-powered tools, social media recruiting, and data-driven approaches that enhance the candidate experience and improve hiring outcomes.</p>
+                        <p>This research examines how organizations can leverage technology to attract top talent while maintaining the human touch that is essential for successful recruitment.</p>
+                        <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Post 3 -->
+                <article class="post">
+                    <div class="post-img" style="background: linear-gradient(45deg, #13547a, #80d0c7);">
+                        <span>Employee Development</span>
+                    </div>
+                    <div class="post-content">
+                        <span class="date"><i class="far fa-calendar"></i> May 15, 2025</span>
+                        <h3>Building a Culture of Continuous Learning</h3>
+                        <p>In today's rapidly changing business environment, organizations must foster a culture of continuous learning to remain competitive. This involves creating opportunities for skill development, knowledge sharing, and career growth.</p>
+                        <p>This article discusses strategies for implementing effective learning and development programs that engage employees, bridge skill gaps, and drive organizational performance.</p>
+                        <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <h3><i class="fas fa-bookmark"></i> Popular Topics</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-chevron-circle-right"></i> Employee Engagement</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-circle-right"></i> Performance Management</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-circle-right"></i> Compensation & Benefits</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-circle-right"></i> HR Analytics</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-circle-right"></i> Talent Management</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-circle-right"></i> Diversity & Inclusion</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-circle-right"></i> Organizational Culture</a></li>
+                </ul>
+
+                <h3 style="margin-top: 35px;"><i class="fas fa-tags"></i> Article Categories</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-folder-open"></i> Strategic HRM</a></li>
+                    <li><a href="#"><i class="fas fa-folder-open"></i> Recruitment</a></li>
+                    <li><a href="#"><i class="fas fa-folder-open"></i> Training & Development</a></li>
+                    <li><a href="#"><i class="fas fa-folder-open"></i> Employee Relations</a></li>
+                    <li><a href="#"><i class="fas fa-folder-open"></i> HR Technology</a></li>
+                    <li><a href="#"><i class="fas fa-folder-open"></i> Workplace Ethics</a></li>
+                </ul>
+                
+                <h3 style="margin-top: 35px;"><i class="fas fa-calendar-alt"></i> Important Dates</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-flag"></i> Assignment Due: May 26, 2025</a></li>
+                    <li><a href="#"><i class="fas fa-flag"></i> Midterm Exams: June 15, 2025</a></li>
+                    <li><a href="#"><i class="fas fa-flag"></i> Final Submission: July 10, 2025</a></li>
+                    <li><a href="#"><i class="fas fa-flag"></i> HR Conference: August 5, 2025</a></li>
+                </ul>
+            </aside>
         </div>
-        <p>&copy; 2023 Muhammad Talha - BSSE-231351 | HRM Assignment</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+            <p class="copyright">© 2025 HRM Assignment Blog. Submitted by Muhammad Talha (BSSE-231351) to Inam Ul Haq</p>
+        </div>
     </footer>
 
     <script>
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+        // Simple JavaScript for interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add animation to info cards
+            const infoCards = document.querySelectorAll('.info-card');
+            infoCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
                 });
             });
-        });
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.style.backgroundColor = 'rgba(176, 48, 96, 0.95)';
-            } else {
-                navbar.style.backgroundColor = '#B03060';
+            
+            // Add animation to read more buttons
+            const readMoreButtons = document.querySelectorAll('.read-more');
+            readMoreButtons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px)';
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Update copyright year
+            const yearSpan = document.querySelector('.copyright');
+            if (yearSpan) {
+                const currentYear = new Date().getFullYear();
+                yearSpan.innerHTML = yearSpan.innerHTML.replace('2025', currentYear);
             }
         });
     </script>
